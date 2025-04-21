@@ -1,0 +1,12 @@
+.button{
+    -fx-text-fill:#5165c9;
+    -fx-background-color: black;
+}
+
+.text{
+    -fx-fill: white;
+}
+
+.VBox{
+    background-color: #5165c9;
+}

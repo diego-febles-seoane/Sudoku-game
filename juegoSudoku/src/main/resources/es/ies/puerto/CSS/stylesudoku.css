@@ -1,0 +1,106 @@
+/* Fondo y estilo de la ventana principal */
+.root {
+    -fx-background-color: #f0f0f0;
+    -fx-font-family: 'Arial', sans-serif;
+}
+
+/* Estilo de los TextFields (celdas del Sudoku) */
+.text-field {
+    -fx-alignment: center;
+    -fx-font-size: 18px;
+    -fx-pref-width: 50px;
+    -fx-pref-height: 50px;
+    -fx-background-color: #ffffff;
+    -fx-border-color: #b0b0b0;
+    -fx-border-width: 1px;
+    -fx-border-radius: 5px;
+    -fx-text-fill: #333333;
+}
+
+.text-field:focused {
+    -fx-border-color: #4d90fe;
+    -fx-background-color: #e9f2fe;
+}
+
+.text-field:editable:empty {
+    -fx-text-fill: #999999;
+}
+
+/* Diferenciar los bloques 3x3 con bordes más gruesos */
+.grid-pane .text-field:nth-child(3), .grid-pane .text-field:nth-child(6), .grid-pane .text-field:nth-child(9),
+.grid-pane .text-field:nth-child(12), .grid-pane .text-field:nth-child(15), .grid-pane .text-field:nth-child(18),
+.grid-pane .text-field:nth-child(21), .grid-pane .text-field:nth-child(24), .grid-pane .text-field:nth-child(27) {
+    -fx-border-right-width: 3px;  /* Borde derecho más grueso entre bloques */
+}
+
+.grid-pane .text-field:nth-child(1), .grid-pane .text-field:nth-child(4), .grid-pane .text-field:nth-child(7),
+.grid-pane .text-field:nth-child(10), .grid-pane .text-field:nth-child(13), .grid-pane .text-field:nth-child(16),
+.grid-pane .text-field:nth-child(19), .grid-pane .text-field:nth-child(22), .grid-pane .text-field:nth-child(25) {
+    -fx-border-bottom-width: 3px;  /* Borde inferior más grueso entre bloques */
+}
+
+/* Resaltar el borde de cada bloque 3x3 con un color diferente */
+.grid-pane .text-field:nth-child(3), .grid-pane .text-field:nth-child(6), .grid-pane .text-field:nth-child(9),
+.grid-pane .text-field:nth-child(12), .grid-pane .text-field:nth-child(15), .grid-pane .text-field:nth-child(18),
+.grid-pane .text-field:nth-child(21), .grid-pane .text-field:nth-child(24), .grid-pane .text-field:nth-child(27) {
+    -fx-border-color: #0074D9; /* Color de borde entre bloques 3x3 */
+}
+
+.grid-pane .text-field:nth-child(1), .grid-pane .text-field:nth-child(4), .grid-pane .text-field:nth-child(7),
+.grid-pane .text-field:nth-child(10), .grid-pane .text-field:nth-child(13), .grid-pane .text-field:nth-child(16),
+.grid-pane .text-field:nth-child(19), .grid-pane .text-field:nth-child(22), .grid-pane .text-field:nth-child(25) {
+    -fx-border-color: #0074D9; /* Color de borde entre bloques 3x3 */
+}
+
+/* Crear una línea más gruesa entre bloques 3x3 */
+.grid-pane .text-field:nth-child(3), .grid-pane .text-field:nth-child(6), .grid-pane .text-field:nth-child(9),
+.grid-pane .text-field:nth-child(12), .grid-pane .text-field:nth-child(15), .grid-pane .text-field:nth-child(18),
+.grid-pane .text-field:nth-child(21), .grid-pane .text-field:nth-child(24), .grid-pane .text-field:nth-child(27) {
+    -fx-border-right-width: 3px;
+    -fx-border-bottom-width: 3px;
+    -fx-border-color: #0074D9; /* Color de la línea que separa los cubos 3x3 */
+}
+
+/* Estilo para las celdas que no son editables */
+.text-field[editable="false"] {
+    -fx-background-color: #e0e0e0;
+    -fx-border-color: #c0c0c0;
+}
+
+/* Estilo para el botón */
+.button {
+    -fx-background-color: #4CAF50;
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-padding: 10px 20px;
+    -fx-border-radius: 5px;
+    -fx-cursor: hand;
+}
+
+.button:hover {
+    -fx-background-color: #45a049;
+}
+
+.button:pressed {
+    -fx-background-color: #388e3c;
+}
+
+/* Alineación y diseño de la estructura */
+.vbox {
+    -fx-alignment: center;
+    -fx-spacing: 20px;
+    -fx-padding: 20px;
+}
+
+/* Espaciado de las celdas en el GridPane */
+.grid-pane {
+    -fx-hgap: 5px;
+    -fx-vgap: 5px;
+    -fx-padding: 10px;
+}
+
+/* Ajuste para el GridPane dentro de VBox */
+#sudokuGrid {
+    -fx-padding: 20px;
+    -fx-alignment: center;
+}
