@@ -37,7 +37,7 @@ public class SudokuController {
     /** 
      * Tiempo restante en segundos 
      */
-    private int timeRemaining = 30;
+    private int timeRemaining = 1800;
 
     /** 
      * Etiqueta para mostrar el temporizador 
