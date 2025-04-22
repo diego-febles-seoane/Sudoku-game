@@ -21,7 +21,7 @@
             <TextField fx:id="textFieldUsuario" layoutX="66.0" layoutY="200.0" maxHeight="-Infinity" prefHeight="24.0" prefWidth="353.0" />
             <ComboBox fx:id="comboIdioma" layoutX="277.0" layoutY="15.0" onAction="#cambiarIdioma" prefWidth="150.0" promptText="Idioma" styleClass="button" />
             <Text fx:id="textUsuario" fill="WHITE" layoutX="201.0" layoutY="172.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="2.0" styleClass="text" text="Usuario:" />
-            <Text fx:id="textContrasenia1" fill="WHITE" layoutX="185.0" layoutY="266.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="2.0" text="Contraseña" />
+            <Text fx:id="textContrasenia" fill="WHITE" layoutX="185.0" layoutY="266.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="2.0" text="Contraseña" />
             <Text fx:id="textFieldMensaje1" layoutX="20.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="" />
             <Button fx:id="onRecuperarButton" alignment="TOP_CENTER" layoutX="102.0" layoutY="441.0" onAction="#openRecuperarClick" prefHeight="41.0" prefWidth="281.0" text="Recuperar Constraseña" textAlignment="CENTER" />
             <Button fx:id="onRegistrarButton" alignment="TOP_CENTER" layoutX="168.0" layoutY="517.0" onAction="#openRegistrarClick" prefHeight="26.0" prefWidth="150.0" text="Registrarse" textAlignment="CENTER" />

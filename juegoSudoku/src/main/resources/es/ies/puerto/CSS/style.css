@@ -12,14 +12,14 @@
 }
 
 /* Textos importantes (como etiquetas de usuario/contraseña) */
-#textUsuario, #textContrasenia1 {
+#textUsuario, #textContrasenia, #textUsuario1, #textContrasenia1, #textMensaje2{
     -fx-fill: #5165c9;
     -fx-font-size: 20px;
     -fx-font-weight: bold;
 }
 
 /* TextField y PasswordField */
-.text-field, .password-field {
+.text-field, .password-field, .textFieldEmail{
     -fx-background-color: #ffffff;
     -fx-border-color: #b0b0b0;
     -fx-border-radius: 6px;
@@ -29,7 +29,7 @@
     -fx-padding: 6px 10px;
 }
 
-.text-field:focused, .password-field:focused {
+.text-field:focused, .password-field:focused, .textFieldEmail:focused {
     -fx-border-color: #4d90fe;
     -fx-background-color: #eef4ff;
 }
