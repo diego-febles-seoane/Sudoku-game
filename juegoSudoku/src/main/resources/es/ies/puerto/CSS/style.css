@@ -1,12 +1,80 @@
-.button{
-    -fx-text-fill:#5165c9;
-    -fx-background-color: black;
+/* Fondo general */
+.root {
+    -fx-background-color: linear-gradient(to bottom, #f0f4ff, #dbe4ff);
+    -fx-font-family: 'Arial', sans-serif;
 }
 
-.text{
-    -fx-fill: white;
+/* Textos principales */
+.text {
+    -fx-fill: #333333;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
 }
 
-.VBox{
-    background-color: #5165c9;
+/* Textos importantes (como etiquetas de usuario/contraseña) */
+#textUsuario, #textContrasenia1 {
+    -fx-fill: #5165c9;
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
 }
+
+/* TextField y PasswordField */
+.text-field, .password-field {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #b0b0b0;
+    -fx-border-radius: 6px;
+    -fx-border-width: 1.2px;
+    -fx-font-size: 16px;
+    -fx-text-fill: #333333;
+    -fx-padding: 6px 10px;
+}
+
+.text-field:focused, .password-field:focused {
+    -fx-border-color: #4d90fe;
+    -fx-background-color: #eef4ff;
+}
+
+/* Botones */
+.button {
+    -fx-background-color: #5165c9;
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-padding: 8px 16px;
+    -fx-border-radius: 8px;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 4, 0.3, 0, 2);
+    -fx-transition: all 0.3s ease-in-out;
+}
+
+.button:hover {
+    -fx-background-color: #3e52a1;
+}
+
+.button:pressed {
+    -fx-background-color: #2e3e81;
+}
+
+/* ComboBox con apariencia de botón */
+.combo-box {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #5165c9;
+    -fx-border-radius: 8px;
+    -fx-font-size: 14px;
+    -fx-padding: 4px 8px;
+    -fx-text-fill: #5165c9;
+}
+
+.combo-box:hover {
+    -fx-background-color: #eef2ff;
+}
+
+/* Imagenes */
+.image-view {
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 6, 0.2, 0, 4);
+}
+
+/* AnchorPane o VBox contenedores */
+.anchor-pane {
+    -fx-padding: 20px;
+}
+

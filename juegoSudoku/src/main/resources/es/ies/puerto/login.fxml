@@ -4,7 +4,6 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Text?>
@@ -13,27 +12,19 @@
    <children>
       <AnchorPane layoutX="-5.0" layoutY="1.0" prefHeight="729.0" prefWidth="484.0">
          <children>
-            <ImageView fitHeight="779.0" fitWidth="1107.0" layoutX="-140.0" layoutY="-13.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../images/fondo.png" />
-               </image>
-            </ImageView>
+            <ImageView fitHeight="779.0" fitWidth="1107.0" layoutX="-140.0" layoutY="-13.0" pickOnBounds="true" preserveRatio="true" />
             <Text fx:id="textFieldMensaje" strokeType="OUTSIDE" strokeWidth="0.0" text="" />
-            <ImageView fitHeight="150.0" fitWidth="163.0" layoutX="37.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../images/Soga.png" />
-               </image>
-            </ImageView>
-            <Button fx:id="onMostrarButton" layoutX="180.0" layoutY="582.0" mnemonicParsing="false" onAction="#openMostrarClick" text="Mostras Usuarios" />
+            <ImageView fitHeight="150.0" fitWidth="163.0" layoutX="37.0" pickOnBounds="true" preserveRatio="true" />
+            <Button fx:id="onMostrarButton" layoutX="148.0" layoutY="590.0" mnemonicParsing="false" onAction="#openMostrarClick" text="Mostras Usuarios" />
             <Button fx:id="onAceptarButton" alignment="TOP_CENTER" layoutX="161.0" layoutY="365.0" onAction="#onLoginButtonClick" prefHeight="26.0" prefWidth="163.0" text="Aceptar" textAlignment="CENTER" />
-            <PasswordField fx:id="textFieldPassword" layoutX="160.0" layoutY="291.0" />
+            <PasswordField fx:id="textFieldPassword" layoutX="142.0" layoutY="292.0" />
             <TextField fx:id="textFieldUsuario" layoutX="66.0" layoutY="200.0" maxHeight="-Infinity" prefHeight="24.0" prefWidth="353.0" />
             <ComboBox fx:id="comboIdioma" layoutX="277.0" layoutY="15.0" onAction="#cambiarIdioma" prefWidth="150.0" promptText="Idioma" styleClass="button" />
-            <Text fx:id="textUsuario" fill="WHITE" layoutX="216.0" layoutY="170.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="2.0" styleClass="text" text="Usuario:" />
-            <Text fx:id="textContrasenia1" fill="WHITE" layoutX="207.0" layoutY="266.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="2.0" text="Contraseña" />
+            <Text fx:id="textUsuario" fill="WHITE" layoutX="201.0" layoutY="172.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="2.0" styleClass="text" text="Usuario:" />
+            <Text fx:id="textContrasenia1" fill="WHITE" layoutX="185.0" layoutY="266.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="2.0" text="Contraseña" />
             <Text fx:id="textFieldMensaje1" layoutX="20.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="" />
-            <Button fx:id="onRecuperarButton" alignment="TOP_CENTER" layoutX="132.0" layoutY="448.0" onAction="#openRecuperarClick" prefHeight="26.0" prefWidth="241.0" text="Recuperar Constraseña" textAlignment="CENTER" />
-            <Button fx:id="onRegistrarButton" alignment="TOP_CENTER" layoutX="178.0" layoutY="516.0" onAction="#openRegistrarClick" prefHeight="26.0" prefWidth="150.0" text="Registrarse" textAlignment="CENTER" />
+            <Button fx:id="onRecuperarButton" alignment="TOP_CENTER" layoutX="102.0" layoutY="441.0" onAction="#openRecuperarClick" prefHeight="41.0" prefWidth="281.0" text="Recuperar Constraseña" textAlignment="CENTER" />
+            <Button fx:id="onRegistrarButton" alignment="TOP_CENTER" layoutX="168.0" layoutY="517.0" onAction="#openRegistrarClick" prefHeight="26.0" prefWidth="150.0" text="Registrarse" textAlignment="CENTER" />
          </children>
       </AnchorPane>
    </children>

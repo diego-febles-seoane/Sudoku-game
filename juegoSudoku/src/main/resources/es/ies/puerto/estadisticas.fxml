@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER" spacing="15" style="-fx-background-color: #5165c9;" stylesheets="@CSS/style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.ies.puerto.controller.EstadisticasController">
+<VBox alignment="CENTER" spacing="15" stylesheets="@CSS/style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.ies.puerto.controller.EstadisticasController">
     <padding>
         <Insets bottom="20" left="20" right="20" top="20" />
     </padding>

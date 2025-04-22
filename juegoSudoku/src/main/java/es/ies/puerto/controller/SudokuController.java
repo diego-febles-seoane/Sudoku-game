@@ -20,9 +20,9 @@ public class SudokuController {
 
     private final int SIZE = 9;
     private int[][] board = new int[SIZE][SIZE];
-    private int timeRemaining = 300;  // Tiempo en segundos (5 minutos)
+    private int timeRemaining = 30;  // Tiempo en segundos 300 segundos (5 minutos)
 
-    @FXML private Label timerLabel;  // Asegúrate de tener un Label para mostrar el temporizador
+    @FXML private Label timerLabel;
 
     private Timeline timer;
 
@@ -38,7 +38,6 @@ public class SudokuController {
 
     @FXML
     public void initialize() {
-        // Inicializar el tablero de Sudoku
         int[][] completeBoard = {
             {5,3,4,6,7,8,9,1,2},
             {6,7,2,1,9,5,3,4,8},
@@ -51,12 +50,10 @@ public class SudokuController {
             {3,4,5,2,8,6,1,7,9}
         };
 
-        // Copiar a board
         for (int i = 0; i < SIZE; i++) {
             System.arraycopy(completeBoard[i], 0, board[i], 0, SIZE);
         }
 
-        // Eliminar celdas al azar
         int cellsToRemove = 45;
         while (cellsToRemove > 0) {
             int row = (int)(Math.random() * SIZE);
@@ -67,7 +64,6 @@ public class SudokuController {
             }
         }
 
-        // Mostrar tablero
         for (int i = 0; i < SIZE; i++) {
             for (int j = 0; j < SIZE; j++) {
                 TextField cell = getCell(i, j);
@@ -82,7 +78,6 @@ public class SudokuController {
             }
         }
 
-        // Inicializar el temporizador
         timer = new Timeline(
             new KeyFrame(Duration.seconds(1), e -> {
                 timeRemaining--;
@@ -92,11 +87,10 @@ public class SudokuController {
                 }
             })
         );
-        timer.setCycleCount(Timeline.INDEFINITE);  // El temporizador se repetirá indefinidamente
-        timer.play();  // Iniciar el temporizador
+        timer.setCycleCount(Timeline.INDEFINITE);
+        timer.play();
     }
 
-    // Actualiza el texto del temporizador en el Label
     private void updateTimerLabel() {
         int minutes = timeRemaining / 60;
         int seconds = timeRemaining % 60;
@@ -104,46 +98,51 @@ public class SudokuController {
     }
 
     private void gameOver() {
-        // Mostrar alerta de Game Over
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Game Over");
-        alert.setHeaderText(null);
-        alert.setContentText("¡Se acabó el tiempo! El juego ha terminado.");
-        alert.showAndWait();
-
-        // Redirigir al perfil
-        try {
-            FXMLLoader loader = new FXMLLoader(PrincipalApplication.class.getResource("perfil.fxml"));
-            Stage stage = (Stage) timerLabel.getScene().getWindow();
-            Scene scene = new Scene(loader.load(), 600, 650);
-            stage.setTitle("Pantalla Inicio");
-            stage.setScene(scene);
-            stage.show();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        timer.stop(); // detener el temporizador
+    
+        javafx.application.Platform.runLater(() -> {
+            // Mostrar alerta de Game Over
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Game Over");
+            alert.setHeaderText(null);
+            alert.setContentText("¡Se acabó el tiempo! El juego ha terminado.");
+            alert.showAndWait();
+    
+            // Redirigir al perfil
+            try {
+                FXMLLoader loader = new FXMLLoader(PrincipalApplication.class.getResource("perfil.fxml"));
+                Stage stage = (Stage) timerLabel.getScene().getWindow();
+                Scene scene = new Scene(loader.load(), 600, 650);
+                stage.setTitle("Pantalla Inicio");
+                stage.setScene(scene);
+                stage.show();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
     }
 
     @FXML
     public void comprobarSudoku() {
-        for (int i = 0; i < SIZE; i++) {
-            for (int j = 0; j < SIZE; j++) {
-                TextField cell = getCell(i, j);
-                String text = cell.getText();
-                if (!text.matches("[1-9]")) {
-                    showAlert("Error", "Hay valores inválidos o vacíos.");
-                    return;
-                }
-                board[i][j] = Integer.parseInt(text);
+    for (int i = 0; i < SIZE; i++) {
+        for (int j = 0; j < SIZE; j++) {
+            TextField cell = getCell(i, j);
+            String text = cell.getText();
+            if (!text.matches("[1-9]")) {
+                showAlert("Error", "Hay valores inválidos o vacíos.");
+                return;
             }
-        }
-
-        if (esValido(board)) {
-            showAlert("¡Correcto!", "¡Felicidades! Sudoku resuelto correctamente.");
-        } else {
-            showAlert("Incorrecto", "El Sudoku no está resuelto correctamente.");
+            board[i][j] = Integer.parseInt(text);
         }
     }
+
+    if (esValido(board)) {
+        int puntuacion = timeRemaining * 5;
+        showAlert("¡Correcto!", "¡Felicidades! Sudoku resuelto correctamente.\nTu puntuación es: " + puntuacion);
+    } else {
+        showAlert("Incorrecto", "El Sudoku no está resuelto correctamente.");
+    }
+}
 
     private boolean esValido(int[][] board) {
         for (int i = 0; i < SIZE; i++) {
